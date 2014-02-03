@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  div(id="container_demo")
+    a(id="toregister", class="hiddenanchor")
+    a(id="tologin" , class="hiddenanchor")
+    div(id="wrapper")
+      div(id="login" , class="animate form")
+        form(method="POST", autocomplete="on", action="/login")
+          h2(class="form-signin-heading") Log In
+          span.error #{error}
+          div.login-wrap
+            p
+              label(class="uname", data-icon="u", for="username") Your username :
+              input#title(type="text" , name="username" , required , placeholder="Enter Your Name")
+            p
+              label(class="youpasswd", data-icon="p" , for="username") Your password :
+              input#body(type="password" , name="password" , required , placeholder="Enter Your Password")
+            p
+              span Test Accout : Username :- Demo , Password:- Demo
+
+            p(class="login button")
+              input(type="submit" , value="LOGIN")
+            p(class="change_link")
+             span Not a member yet ?
+             a(class="to_register", href="#toregister") Join us
+      div(id="register" , class="animate form")
+        form(method="POST", autocomplete="on", action="/users")
+          h2(class="form-signin-heading") Sign up
+          span #{error_sign}
+          div.login-wrap
+            p
+              label(class="uname", data-icon="u", for="username") Your username :
+              input#title(type="text" , name="username" , required , placeholder="mysuperusername690")
+            p
+              label(class="youpasswd", data-icon="p" , for="password") Your password :
+              input#body(type="password" , name="password" , required , placeholder="eg. X8df!90EO")
+
+            p
+              label(class="youpasswd", data-icon="e" , for="email") Your email :
+              input#body(type="text" , name="email" , placeholder="mysupermail@mail.com")
+
+            p
+              label(class="youpasswd", data-icon='' , for="phone") Your mobile phone :
+              input#body(type="text" ,class="youpassdwd" , name="phone" ,  placeholder="7894561231")
+
+            p
+              label(class="youpasswd", data-icon="" , for="location") Your location :
+              textarea(name="location" ,style="padding-left:6px;width:97%;", placeholder="Location")
+
+            p(class="login button")
+              input(type="submit" , value="Sign up")
+            p(class="change_link")
+             span  Already a member ?
+             a(class="to_register", href="#tologin")  Go and log in
+

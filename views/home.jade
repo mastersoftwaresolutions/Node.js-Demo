@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  div(id="container_demo")
+    div(id="wrapper2")
+      div(id="listing", class="animate form")
+
+        form(method="POST", autocomplete="on", action="/update")
+          h2(class="form-signin-heading")  Detail
+            span(class="logout")
+              a(href="/logout")
+                img(src="/images/logout.png", alt="logout")
+          span.error #{error}
+          span.error #{message}
+          div.login-wrap
+            div(class="form-group")
+              label(class="uname", for="username") Username :
+              input#title(type="text" , name="username" , readonly="readonly", value="#{user.username}" ,class="txt_listbx" )
+            div(class="form-group")
+              label(class="youpasswd", for="password") Password :
+              input#body(type="password" , name="password" , required , value="#{user.password}" ,class="txt_listbx")
+
+            div(class="form-group")
+              label(class="youpasswd", for="email") Email :
+              input#body(type="text" , name="email" , value="#{user.email}",  class="txt_listbx")
+
+            div(class="form-group")
+              label(class="youpasswd",  for="phone") Phone :
+              input#body(type="text" , name="phone" , value="#{user.phone}" , class="txt_listbx")
+
+            div(class="form-group")
+              label(class="youpasswd", for="location") Location :
+              textarea(name="location" , class="txt_listbx") #{user.location}
+            div(class="clearfix")
+            p(class="login button")
+              input(type="submit" , class="sub_btn" ,value="UPDATE")
